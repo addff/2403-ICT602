@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.top-section {
+    height: 800px;
+    background-color: white;
+    width: 100%;
+}
+
+.bottom-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #FFD700; /* Gold color for the frame */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.6); /* Goldish shadow */
+    transition: transform 0.3s;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+.popup img {
+    max-width: 80%;
+    max-height: 80%;
+    border: 2px solid #FFD700; /* Gold color for the frame */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.6); /* Goldish shadow */
+    margin: 0 auto;
+}
+
+.thumbnail:hover .popup {
+    display: flex;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.1);
+}
+
+.close-button, .new-tab-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #FFD700;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+}
+
+.close-button:hover, .new-tab-button:hover {
+    background-color: #FFB700;
+}
